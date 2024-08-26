@@ -25,6 +25,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
               country: obj.country,
               currency: obj.currency,
               focus: obj.focus,
+              income: income,
             })
           );
         }
