@@ -1,18 +1,12 @@
 "use client";
-
 import { downloadReport } from "@/lib/downloadReport";
-import React, { useEffect, useState } from "react";
-import DashboardOverview from "./DashboardOverview";
-import BudgetBreakdown from "./BudgetBreakdown";
-import Modal from "./Modal";
 import { calculateBudget } from "@/lib/functions";
 import { useRouter, useSearchParams } from "next/navigation";
-import {
-  FaRegCalendarAlt,
-  FaPlusCircle,
-  FaFileDownload,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaFileDownload, FaPlusCircle, FaSignOutAlt } from "react-icons/fa";
+import BudgetBreakdown from "./BudgetBreakdown";
+import DashboardOverview from "./DashboardOverview";
+import Modal from "./Modal";
 
 const DashComp = () => {
   const params = useSearchParams();
@@ -84,8 +78,8 @@ const DashComp = () => {
         </div>
       </header>
 
-      <main id="dashboard" className="max-w-6xl mx-auto space-y-8 px-4">
-        <section className="bg-white p-6 rounded-lg shadow-lg">
+      <main id="dashboard" className="max-w-6xl mx-auto space-y-8 ">
+        <section className="bg-white  rounded-lg shadow-lg">
           <DashboardOverview
             date={todaysDateInFormat()}
             budget={budget}
@@ -98,7 +92,7 @@ const DashComp = () => {
           />
         </section>
 
-        <section className="bg-white p-6 rounded-lg shadow-lg">
+        <section className="bg-white  rounded-lg shadow-lg">
           <BudgetBreakdown
             budget={budget}
             appData={{

@@ -6,7 +6,7 @@ const StepsSection = () => {
     "Get started",
     "Fill out the form",
     "See your proposed budget",
-    "Download to your device and plan your expenses",
+    "Download the budget plan  and use it to  plan your expenses",
   ];
 
   return (
