@@ -1,21 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const DashboardOverview = () => {
-  const [generatedBudget, setGeneratedBudget] = useState<any>(null);
-  const [data, setData] = useState<any>({});
+const DashboardOverview = ({ budget, appData }: any) => {
+  const [data, setData] = useState<any>(appData);
   const [overviewData, setOverviewData] = useState<any>(null);
   useEffect(() => {
-    if (window !== undefined) {
-      const storedData = localStorage.getItem("generatedBudget");
-      const data = localStorage.getItem("data");
-      if (storedData !== null) {
-        setGeneratedBudget(JSON.parse(storedData));
-        setData(JSON.parse(data || "{}"));
-        loadOverview(JSON.parse(storedData), JSON.parse(data || "{}"));
-      }
-    }
-  }, [localStorage.getItem("generatedBudget")]);
+    loadOverview(budget, appData);
+  }, [appData, budget]);
 
   const loadOverview = (budget: any, data: any) => {
     let totalIncome = data?.income || 0,

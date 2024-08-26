@@ -8,7 +8,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
-  const [income, setIncome] = useState<number>(0);
+  const [income, setIncome] = useState<string>("");
   const [focus, setFocus] = useState<string>("balanced");
 
   if (!isOpen) return null;
@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
       }
     }
     event.preventDefault();
-    onGenerate(income, focus);
+    onGenerate(+income, focus);
     onClose();
   };
 
@@ -44,11 +44,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
           <label className="flex flex-col">
             <span className="text-gray-700">Monthly Income</span>
             <input
-              type="number"
+              type="text"
               value={income}
-              onChange={(e) => setIncome(parseFloat(e.target.value))}
+              onChange={(e) => setIncome(e.target.value)}
               className="mt-2 p-3 border border-gray-300 rounded-lg"
               required
+              placeholder="Enter your income"
             />
           </label>
           <label className="flex flex-col">

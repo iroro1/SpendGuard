@@ -1,5 +1,6 @@
 "use client";
 import { countries } from "@/lib/countries";
+import { calculateBudget } from "@/lib/functions";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -7,12 +8,19 @@ const OnboardingForm = () => {
   const [country, setCountry] = useState("Nigeria");
   const [currency, setCurrency] = useState("NGN");
   const [focus, setFocus] = useState("");
+  const [income, setIncome] = useState("");
   const router = useRouter();
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const obj = { country, currency, focus };
-    if (window !== undefined) localStorage.setItem("data", JSON.stringify(obj));
-    router.push("/dashboard");
+
+    const budget = calculateBudget(+income, focus);
+
+    router.push(
+      "/dashboard?" +
+        `country=${country}&currency=${currency}&income=${income}&focus=${focus}&budget=${JSON.stringify(
+          budget
+        )}`
+    );
   };
 
   return (
@@ -51,6 +59,19 @@ const OnboardingForm = () => {
         </select>
       </div>
 
+      <div className="flex flex-col text-left">
+        <label htmlFor="income" className="text-lg font-medium text-gray-700">
+          Income:
+        </label>
+        <input
+          type="text"
+          id="income"
+          value={income}
+          placeholder="Enter your income"
+          onChange={(e) => setIncome(e.target.value)}
+          className="mt-2 p-3 border border-gray-300 rounded-lg"
+        />
+      </div>
       <div className="flex flex-col text-left">
         <label htmlFor="focus" className="text-lg font-medium text-gray-700">
           Budget Focus:

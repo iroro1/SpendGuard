@@ -207,8 +207,19 @@ export const calculateBudget = (
   return categories;
 };
 
-export const randomColor = () => {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+export const randomColor = (ind: number) => {
+  // pick out of and arraay of 10 bright and warm colors
+  const colors = [
+    "tomato",
+    "navy",
+    "deepskyblue",
+    "orange",
+    "fuchsia",
+    "turquoise",
+    "lime",
+    "gold",
+  ];
+  return colors[ind];
 };
 
 export const capitalize = (str: string) => {

@@ -1,3 +1,4 @@
+"use client";
 import OnboardingForm from "@/components/OnboardingForm";
 import React from "react";
 

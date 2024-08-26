@@ -1,3 +1,4 @@
+"use client";
 import CallToAction from "@/components/CallToAction";
 import FeatureSection from "@/components/FeatureSection";
 import Header from "@/components/Header";

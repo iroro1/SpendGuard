@@ -1,6 +1,4 @@
 // components/HeroSection.tsx
-import React from "react";
-import Header from "./Header";
 import Link from "next/link";
 // import { Button } from 'shadcn';
 
