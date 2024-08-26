@@ -7,7 +7,7 @@ const Onboarding = () => {
       <div className="max-w-lg w-full text-center">
         <h1 className="text-4xl font-bold mb-8">Welcome to Spend Guard</h1>
         <p className="text-lg mb-12">
-          Let's get started by setting up your preferences.
+          Let&apos;s get started by setting up your preferences.
         </p>
         <div className="bg-white text-black p-8 rounded-lg shadow-lg">
           <OnboardingForm />
