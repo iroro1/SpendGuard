@@ -58,7 +58,7 @@ const BudgetBreakdown = ({ budget, appData }: any) => {
                     </span>
                     <span className="text-gray-800">
                       {data?.currency}{" "}
-                      {Intl.NumberFormat().format(subItem.amount)}
+                      {Intl.NumberFormat().format(subItem.amount.toFixed(2))}
                     </span>
                   </div>
                 ))}

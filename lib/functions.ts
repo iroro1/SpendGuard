@@ -20,7 +20,7 @@ export const calculateBudget = (
         {
           name: "Savings",
           subcategories: [
-            { name: "Emergency Fund", amount: income * 0.15 },
+            { name: "Emergency Fund", amount: income * 0.1 },
             { name: "Retirement Fund", amount: income * 0.1 },
             { name: "Short-Term Savings", amount: income * 0.1 },
             { name: "Investments", amount: income * 0.05 }, // Added investment
@@ -29,22 +29,22 @@ export const calculateBudget = (
         {
           name: "Housing",
           subcategories: [
-            { name: "Rent/Mortgage", amount: income * 0.15 },
+            { name: "Rent/Mortgage", amount: income * 0.2 },
             { name: "Utilities", amount: income * 0.05 },
-            { name: "Property Taxes", amount: income * 0.05 },
+            { name: "Property Taxes", amount: income * 0.03 },
           ],
         },
         {
           name: "Groceries",
           subcategories: [
             { name: "Food", amount: income * 0.1 },
-            { name: "Household Supplies", amount: income * 0.05 },
+            { name: "Household Supplies", amount: income * 0.03 },
           ],
         },
         {
           name: "Transportation",
           subcategories: [
-            { name: "Fuel", amount: income * 0.03 },
+            { name: "Fuel", amount: income * 0.05 },
             { name: "Public Transport", amount: income * 0.02 },
             { name: "Maintenance", amount: income * 0.03 },
           ],
@@ -54,7 +54,7 @@ export const calculateBudget = (
           subcategories: [
             { name: "Movies/Shows", amount: income * 0.02 },
             { name: "Hobbies", amount: income * 0.02 },
-            { name: "Dining Out", amount: income * 0.01 },
+            { name: "Dining Out", amount: income * 0.02 },
           ],
         },
         {
@@ -79,7 +79,7 @@ export const calculateBudget = (
         {
           name: "Investments",
           subcategories: [
-            { name: "Stocks", amount: income * 0.25 },
+            { name: "Stocks", amount: income * 0.2 },
             { name: "Bonds", amount: income * 0.1 },
             { name: "Real Estate", amount: income * 0.1 },
             { name: "Savings", amount: income * 0.05 }, // Added savings
@@ -90,20 +90,20 @@ export const calculateBudget = (
           subcategories: [
             { name: "Rent/Mortgage", amount: income * 0.2 },
             { name: "Utilities", amount: income * 0.05 },
-            { name: "Property Taxes", amount: income * 0.05 },
+            { name: "Property Taxes", amount: income * 0.03 },
           ],
         },
         {
           name: "Groceries",
           subcategories: [
             { name: "Food", amount: income * 0.1 },
-            { name: "Household Supplies", amount: income * 0.05 },
+            { name: "Household Supplies", amount: income * 0.03 },
           ],
         },
         {
           name: "Transportation",
           subcategories: [
-            { name: "Fuel", amount: income * 0.03 },
+            { name: "Fuel", amount: income * 0.05 },
             { name: "Public Transport", amount: income * 0.02 },
             { name: "Maintenance", amount: income * 0.03 },
           ],
@@ -113,7 +113,7 @@ export const calculateBudget = (
           subcategories: [
             { name: "Movies/Shows", amount: income * 0.02 },
             { name: "Hobbies", amount: income * 0.02 },
-            { name: "Dining Out", amount: income * 0.01 },
+            { name: "Dining Out", amount: income * 0.02 },
           ],
         },
         {
@@ -138,40 +138,40 @@ export const calculateBudget = (
         {
           name: "Savings",
           subcategories: [
-            { name: "Emergency Fund", amount: income * 0.1 },
-            { name: "Retirement Fund", amount: income * 0.1 },
-            { name: "Short-Term Savings", amount: income * 0.1 },
+            { name: "Emergency Fund", amount: income * 0.08 },
+            { name: "Retirement Fund", amount: income * 0.08 },
+            { name: "Short-Term Savings", amount: income * 0.09 },
           ],
         },
         {
           name: "Investments",
           subcategories: [
             { name: "Stocks", amount: income * 0.15 },
-            { name: "Bonds", amount: income * 0.1 },
+            { name: "Bonds", amount: income * 0.08 },
             { name: "Real Estate", amount: income * 0.1 },
           ],
         },
         {
           name: "Housing",
           subcategories: [
-            { name: "Rent/Mortgage", amount: income * 0.15 },
+            { name: "Rent/Mortgage", amount: income * 0.2 },
             { name: "Utilities", amount: income * 0.05 },
-            { name: "Property Taxes", amount: income * 0.05 },
+            { name: "Property Taxes", amount: income * 0.03 },
           ],
         },
         {
           name: "Groceries",
           subcategories: [
             { name: "Food", amount: income * 0.1 },
-            { name: "Household Supplies", amount: income * 0.05 },
+            { name: "Household Supplies", amount: income * 0.03 },
           ],
         },
         {
           name: "Transportation",
           subcategories: [
             { name: "Fuel", amount: income * 0.05 },
-            { name: "Public Transport", amount: income * 0.03 },
-            { name: "Maintenance", amount: income * 0.02 },
+            { name: "Public Transport", amount: income * 0.02 },
+            { name: "Maintenance", amount: income * 0.03 },
           ],
         },
         {
@@ -203,7 +203,32 @@ export const calculateBudget = (
       throw new Error("Invalid focus type");
   }
 
-  // Return the calculated budget categories
+  // Calculate the total allocated amount and adjust if necessary
+  const totalAllocated = categories.reduce(
+    (sum, category) =>
+      sum +
+      category.subcategories.reduce(
+        (subSum, subcategory) => subSum + subcategory.amount,
+        0
+      ),
+    0
+  );
+
+  console.log("totalAllocated", totalAllocated);
+
+  if (totalAllocated > income) {
+    const adjustmentFactor = income / totalAllocated;
+    categories = categories.map((category) => ({
+      ...category,
+      subcategories: category.subcategories.map((subcategory) => ({
+        ...subcategory,
+        amount: subcategory.amount * adjustmentFactor,
+      })),
+    }));
+  }
+
+  console.log("categories", categories);
+
   return categories;
 };
 
