@@ -1,8 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { FaMoneyBillWave, FaChartLine, FaPiggyBank } from "react-icons/fa";
+import {
+  FaMoneyBillWave,
+  FaChartLine,
+  FaPiggyBank,
+  FaRegCalendarAlt,
+} from "react-icons/fa";
 
-const DashboardOverview = ({ budget, appData }: any) => {
+const DashboardOverview = ({ budget, appData, date }: any) => {
   const [data, setData] = useState<any>(appData);
   const [overviewData, setOverviewData] = useState<any>(null);
 
@@ -27,6 +32,10 @@ const DashboardOverview = ({ budget, appData }: any) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="mt-4 md:mt-0 text-gray-700 flex items-center">
+        <FaRegCalendarAlt className="mr-2 text-gray-500" />
+        <p>{date}</p>
+      </div>
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">Overview</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Total Income Card */}

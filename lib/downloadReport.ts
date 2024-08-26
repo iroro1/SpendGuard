@@ -2,7 +2,7 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-export const downloadReport = async () => {
+export const downloadReport = async (date: string) => {
   // Find the element to capture (e.g., the entire dashboard or a specific section)
   const element = document.getElementById("dashboard");
 
@@ -25,5 +25,5 @@ export const downloadReport = async () => {
   pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
 
   // Save the PDF
-  pdf.save("report.pdf");
+  pdf.save(date + "-report.pdf");
 };

@@ -68,7 +68,7 @@ const DashComp = () => {
             Generate New Budget
           </button>
           <button
-            onClick={downloadReport}
+            onClick={() => downloadReport(todaysDateInFormat().toString())}
             className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300 flex items-center"
           >
             <FaFileDownload className="mr-2" />
@@ -86,12 +86,8 @@ const DashComp = () => {
 
       <main id="dashboard" className="max-w-6xl mx-auto space-y-8 px-4">
         <section className="bg-white p-6 rounded-lg shadow-lg">
-          <div className="mt-4 md:mt-0 text-gray-700 flex items-center">
-            <FaRegCalendarAlt className="mr-2 text-gray-500" />
-            <p>{todaysDateInFormat()}</p>
-          </div>
-
           <DashboardOverview
+            date={todaysDateInFormat()}
             budget={budget}
             appData={{
               focus: params.get("focus"),
