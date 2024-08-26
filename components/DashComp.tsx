@@ -59,7 +59,7 @@ const DashComp = () => {
       <header className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between p-6 bg-white shadow-md rounded-b-lg mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
 
-        <div className="flex gap-4 mt-4 md:mt-0">
+        <div className="flex flex-col md:flex-row gap-4 mt-4 md:mt-0">
           <button
             onClick={handleGenerateNewBudget}
             className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300 flex items-center"
