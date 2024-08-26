@@ -14,23 +14,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
   if (!isOpen) return null;
 
   const handleSubmit = (event: React.FormEvent) => {
-    if (window !== undefined) {
-      const data = localStorage.getItem("data");
-      if (data !== null) {
-        const obj = JSON.parse(data);
-        if (obj !== null) {
-          localStorage.setItem(
-            "data",
-            JSON.stringify({
-              country: obj.country,
-              currency: obj.currency,
-              focus: obj.focus,
-              income: income,
-            })
-          );
-        }
-      }
-    }
     event.preventDefault();
     onGenerate(+income, focus);
     onClose();
