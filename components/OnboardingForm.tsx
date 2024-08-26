@@ -11,7 +11,7 @@ const OnboardingForm = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     const obj = { country, currency, focus };
-    localStorage.setItem("data", JSON.stringify(obj));
+    if (window !== undefined) localStorage.setItem("data", JSON.stringify(obj));
     router.push("/dashboard");
   };
 
