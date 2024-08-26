@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-cover bg-center bg-hero-image min-h-screen flex flex-col items-center justify-center text-center">
+    <section className="relative pb-[40px] bg-cover bg-center bg-hero-image min-h-screen flex flex-col items-center justify-center text-center">
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-      <div className="relative z-10 px-4 max-w-3xl mx-auto">
+      <div className="relative z-10 px-4 max-w-3xl pt-[40px] w-[90%] mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
           Welcome to Spend Guard
         </h1>
@@ -24,7 +24,7 @@ const HeroSection = () => {
         </Link>
       </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row mt-16 space-y-8 md:space-y-0 md:space-x-8 max-w-4xl mx-auto">
+      <div className="relative z-10 w-[90%]  flex flex-col md:flex-row mt-16 space-y-8 md:space-y-0 md:space-x-8 max-w-4xl mx-auto">
         <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md text-white flex-1">
           <h3 className="text-2xl font-semibold mb-4">Smart Budgeting</h3>
           <p>
