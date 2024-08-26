@@ -208,18 +208,22 @@ export const calculateBudget = (
 };
 
 export const randomColor = (ind: number) => {
-  // pick out of and arraay of 10 bright and warm colors
+  // Pick out of an array of 10 bright and warm colors
   const colors = [
-    "tomato",
-    "navy",
-    "deepskyblue",
-    "orange",
-    "fuchsia",
-    "turquoise",
-    "lime",
-    "gold",
+    "#FF5733", // Fiery Red-Orange
+    "#FFBF00", // Vivid Yellow
+    "#FF6F61", // Coral
+    "#FF8C00", // Dark Orange
+    "#FFD700", // Gold
+    "#FF69B4", // Hot Pink
+    "#FF1493", // Deep Pink
+    "#FF4500", // Orange Red
+    "#F4A460", // Sandy Brown
+    "#FFA07A", // Light Salmon
   ];
-  return colors[ind];
+
+  // Use modulo to ensure index is within bounds
+  return colors[ind % colors.length];
 };
 
 export const capitalize = (str: string) => {

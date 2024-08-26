@@ -1,9 +1,9 @@
 "use client";
-import { capitalize, randomColor } from "@/lib/functions";
 import React, { useEffect, useState } from "react";
+import { FaDollarSign, FaTag, FaMoneyCheck } from "react-icons/fa";
+import { capitalize, randomColor } from "@/lib/functions";
 
 const BudgetBreakdown = ({ budget, appData }: any) => {
-  // Example data for demonstration purposes
   const [generatedBudget, setGeneratedBudget] = useState<any>(budget);
   const [data, setData] = useState<any>(appData);
 
@@ -15,38 +15,45 @@ const BudgetBreakdown = ({ budget, appData }: any) => {
   return (
     generatedBudget.length > 0 && (
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <div className="mb-4 border-b">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+        <div className="mb-6 border-b pb-4">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-2">
             Budget Breakdown
           </h2>
-          <h4 className="text-gray-800 -mt-4 bold">
+          <h4 className="text-gray-600 text-lg font-medium">
             {capitalize(data?.focus)} Plan
           </h4>
         </div>
-        <div className="space-y-4 mt-6">
+        <div className="space-y-6">
           {generatedBudget?.map((item: any, index: number) => (
             <div
               key={index}
-              className="flex flex-col justify-between items-start border-b border-gray-300 pb-2"
+              className="flex flex-col border-b border-gray-300 pb-4"
             >
-              <div className="flex items-center">
+              <div className="flex items-center mb-2">
                 <div
-                  className="w-4 h-4 rounded-full mr-2"
+                  className="w-6 h-6 rounded-full mr-3 flex items-center justify-center"
                   style={{
                     backgroundColor: randomColor(index),
+                    color: "#fff",
                   }}
-                ></div>
-                <div className={`text-[${randomColor(index)}] font-semibold`}>
+                >
+                  <FaDollarSign className="text-xl" />
+                </div>
+                <div
+                  className="text-lg font-semibold"
+                  style={{ color: randomColor(index) }}
+                >
                   {item.name}
                 </div>
               </div>
-              <div className="text-gray-700 ml-6 text-sm w-full flex flex-col gap-2">
+              <div className="text-gray-700 text-sm flex flex-col gap-2">
                 {item?.subcategories?.map((subItem: any, subIndex: number) => (
                   <div
                     key={subIndex}
-                    className="text-gray-700 flex justify-between gap-4  pr-8 items-center w-full"
+                    className="flex justify-between items-center w-full pr-4"
                   >
-                    <span className="text-gray-900 font-semibold">
+                    <span className="text-gray-900 font-semibold flex items-center gap-2">
+                      <FaTag className="text-gray-600" />
                       {subItem.name}
                     </span>
                     <span className="text-gray-800">

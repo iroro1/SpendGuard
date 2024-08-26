@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { FaMoneyBillWave, FaChartLine, FaPiggyBank } from "react-icons/fa";
 
 const DashboardOverview = ({ budget, appData }: any) => {
   const [data, setData] = useState<any>(appData);
   const [overviewData, setOverviewData] = useState<any>(null);
+
   useEffect(() => {
     loadOverview(budget, appData);
   }, [appData, budget]);
@@ -13,46 +15,56 @@ const DashboardOverview = ({ budget, appData }: any) => {
       totalExpenses = 0,
       totalSavings = 0;
 
-    // totalSavings =
-    const bgtFilter = budget.filter((b: any) => {
-      if (b.name === "Savings") {
-        return b;
-      }
-    });
-    bgtFilter[0]?.subcategories.map((sub: any) => {
-      totalSavings += sub.amount;
-    });
+    const savingsCategory = budget.find((b: any) => b.name === "Savings");
+    if (savingsCategory) {
+      savingsCategory.subcategories.forEach((sub: any) => {
+        totalSavings += sub.amount;
+      });
+    }
     totalExpenses = totalIncome - totalSavings;
     setOverviewData({ totalIncome, totalExpenses, totalSavings });
   };
-  console.log(overviewData);
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Overview</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Overview</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Example of financial summary cards */}
-        <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm">
-          <h3 className="text-lg font-medium text-gray-700">Total Income</h3>
-          <p className="text-xl font-bold text-gray-900">
-            {data?.currency}{" "}
-            {Intl.NumberFormat().format(overviewData?.totalIncome)}{" "}
-          </p>
+        {/* Total Income Card */}
+        <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-sm flex items-center">
+          <FaMoneyBillWave className="text-blue-600 w-8 h-8 mr-4" />
+          <div>
+            <h3 className="text-lg font-medium text-gray-700">Total Income</h3>
+            <p className="text-xl font-bold text-gray-900">
+              {data?.currency}{" "}
+              {Intl.NumberFormat().format(overviewData?.totalIncome)}
+            </p>
+          </div>
         </div>
 
-        <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm">
-          <h3 className="text-lg font-medium text-gray-700">Total Expenses</h3>
-          <p className="text-xl font-bold text-gray-900">
-            {data?.currency}{" "}
-            {Intl.NumberFormat().format(overviewData?.totalExpenses)}{" "}
-          </p>
+        {/* Total Expenses Card */}
+        <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-sm flex items-center">
+          <FaChartLine className="text-red-600 w-8 h-8 mr-4" />
+          <div>
+            <h3 className="text-lg font-medium text-gray-700">
+              Total Expenses
+            </h3>
+            <p className="text-xl font-bold text-gray-900">
+              {data?.currency}{" "}
+              {Intl.NumberFormat().format(overviewData?.totalExpenses)}
+            </p>
+          </div>
         </div>
 
-        <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm">
-          <h3 className="text-lg font-medium text-gray-700">Net Savings</h3>
-          <p className="text-xl font-bold text-gray-900">
-            {data?.currency}{" "}
-            {Intl.NumberFormat().format(overviewData?.totalSavings)}
-          </p>
+        {/* Net Savings Card */}
+        <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-sm flex items-center">
+          <FaPiggyBank className="text-green-600 w-8 h-8 mr-4" />
+          <div>
+            <h3 className="text-lg font-medium text-gray-700">Net Savings</h3>
+            <p className="text-xl font-bold text-gray-900">
+              {data?.currency}{" "}
+              {Intl.NumberFormat().format(overviewData?.totalSavings)}
+            </p>
+          </div>
         </div>
       </div>
     </div>
