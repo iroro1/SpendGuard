@@ -23,7 +23,7 @@ const BudgetBreakdown = ({ budget, appData }: any) => {
             {capitalize(data?.focus)} Plan
           </h4>
         </div>
-        <div className="space-y-6">
+        <div className=" grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {generatedBudget?.map((item: any, index: number) => (
             <div
               key={index}
