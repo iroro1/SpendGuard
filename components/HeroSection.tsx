@@ -12,9 +12,10 @@ const HeroSection = () => {
           Your ultimate tool for smarter budgeting, saving, and investing.
         </p>
         <p className="text-lg md:text-xl text-gray-300 mb-10">
-          Whether you're looking to save more, invest wisely, or simply manage
-          your expenses better, Spend Guard has you covered. Customize your
-          financial plan to match your goals and take control of your future.
+          Whether you&apos;re looking to save more, invest wisely, or simply
+          manage your expenses better, Spend Guard has you covered. Customize
+          your financial plan to match your goals and take control of your
+          future.
         </p>
         <Link href={"/onboarding"}>
           <button className="bg-yellow-500 text-black px-8 py-4 rounded-full shadow-lg hover:bg-yellow-400 hover:scale-105 transition duration-300 transform">
