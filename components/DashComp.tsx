@@ -8,7 +8,7 @@ import BudgetBreakdown from "./BudgetBreakdown";
 import DashboardOverview from "./DashboardOverview";
 import Modal from "./Modal";
 
-const DashComp = () => {
+const DashComp: React.FC = () => {
   const params = useSearchParams();
 
   useEffect(() => {

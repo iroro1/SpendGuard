@@ -6,7 +6,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-12 px-8">
       <div className="max-w-6xl mx-auto px-4">
@@ -35,40 +35,40 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4">
-              <a
+            <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+            <div title="social-icons" className="flex space-x-4">
+              <Link
                 href="https://web.facebook.com/ojigbo.pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-500 transition duration-300"
               >
                 <FaFacebookF size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://x.com/LeoOjigbo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-500 transition duration-300"
               >
                 <FaTwitter size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/iroro1/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-500 transition duration-300"
               >
                 <FaLinkedinIn size={20} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.instagram.com/iroro1/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-yellow-500 transition duration-300"
               >
                 <FaInstagram size={20} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

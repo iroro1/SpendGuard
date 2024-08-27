@@ -7,7 +7,22 @@ import {
   FaRegCalendarAlt,
 } from "react-icons/fa";
 
-const DashboardOverview = ({ budget, appData, date }: any) => {
+interface DashboardOverviewProps {
+  date: string;
+  budget: any;
+  appData: {
+    focus: string | null;
+    income: string | null;
+    currency: string | null;
+    country: string | null;
+  };
+}
+
+const DashboardOverview: React.FC<DashboardOverviewProps> = ({
+  budget,
+  appData,
+  date,
+}: any) => {
   const [data, setData] = useState<any>(appData);
   const [overviewData, setOverviewData] = useState<any>(null);
 

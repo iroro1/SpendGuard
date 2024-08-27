@@ -3,7 +3,19 @@ import React, { useEffect, useState } from "react";
 import { FaDollarSign, FaTag, FaMoneyCheck } from "react-icons/fa";
 import { capitalize, randomColor } from "@/lib/functions";
 
-const BudgetBreakdown = ({ budget, appData }: any) => {
+interface BudgetBreakdownProps {
+  budget: any;
+  appData: {
+    focus: string | null;
+    income: string | null;
+    currency: string | null;
+    country: string | null;
+  };
+}
+const BudgetBreakdown: React.FC<BudgetBreakdownProps> = ({
+  budget,
+  appData,
+}: any) => {
   const [generatedBudget, setGeneratedBudget] = useState<any>(budget);
   const [data, setData] = useState<any>(appData);
 

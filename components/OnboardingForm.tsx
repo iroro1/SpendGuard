@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { FaDollarSign, FaGlobe, FaRegMoneyBillAlt } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-const OnboardingForm = () => {
+const OnboardingForm: React.FC = () => {
   const [country, setCountry] = useState("Nigeria");
   const [currency, setCurrency] = useState("NGN");
   const [focus, setFocus] = useState("");

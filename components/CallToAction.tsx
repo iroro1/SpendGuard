@@ -1,9 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-const CallToAction = () => {
+const CallToAction: React.FC = () => {
   return (
-    <section className="relative bg-black py-16 px-4 text-center text-white">
+    <section
+      title="cta"
+      className="relative bg-black py-16 px-4 text-center text-white"
+    >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-indigo-900 opacity-60"></div>
 

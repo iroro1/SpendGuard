@@ -10,7 +10,10 @@ const StepsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-8 bg-gradient-to-r from-blue-50 to-indigo-50 text-gray-900">
+    <section
+      title="steps-section"
+      className="py-20 px-8 bg-gradient-to-r from-blue-50 to-indigo-50 text-gray-900"
+    >
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-16">
           Get Started in 5 Easy Steps

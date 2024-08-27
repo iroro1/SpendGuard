@@ -28,9 +28,9 @@ const features = [
   },
 ];
 
-const FeatureSection = () => {
+const FeatureSection: React.FC = () => {
   return (
-    <section className="py-24 px-8 bg-white text-black">
+    <section title="feature-section" className="py-24 px-8 bg-white text-black">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
         {features.map((feature, index) => (
           <div
