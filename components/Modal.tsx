@@ -15,12 +15,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onGenerate }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    console.log(income, focus);
+
     onGenerate(+income, focus);
     onClose();
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+    <div
+      title="generate-modal"
+      id="generate-modal"
+      className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"
+    >
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold mb-4">Generate New Budget</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

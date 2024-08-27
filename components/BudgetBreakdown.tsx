@@ -26,16 +26,19 @@ const BudgetBreakdown: React.FC<BudgetBreakdownProps> = ({
 
   return (
     generatedBudget.length > 0 && (
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div id="breakdown" className="bg-white p-6 rounded-lg shadow-md">
         <div className="mb-6 border-b pb-4">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2">
             Budget Breakdown
           </h2>
-          <h4 className="text-gray-600 text-lg font-medium">
+          <h4 id="focus" className="text-gray-600 text-lg font-medium">
             {capitalize(data?.focus)} Plan
           </h4>
         </div>
-        <div className=" grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          id="budget-breakdown"
+          className=" grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {generatedBudget?.map((item: any, index: number) => (
             <div
               key={index}

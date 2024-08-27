@@ -52,13 +52,16 @@ const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         <p>{date}</p>
       </div>
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">Overview</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        id="overview"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
         {/* Total Income Card */}
         <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-sm flex items-center">
           <FaMoneyBillWave className="text-blue-600 w-8 h-8 mr-4" />
           <div>
             <h3 className="text-lg font-medium text-gray-700">Total Income</h3>
-            <p className="text-xl font-bold text-gray-900">
+            <p id="total-income" className="text-xl font-bold text-gray-900">
               {data?.currency}{" "}
               {Intl.NumberFormat().format(overviewData?.totalIncome)}
             </p>
@@ -72,7 +75,7 @@ const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             <h3 className="text-lg font-medium text-gray-700">
               Total Expenses
             </h3>
-            <p className="text-xl font-bold text-gray-900">
+            <p id="total-expenses" className="text-xl font-bold text-gray-900">
               {data?.currency}{" "}
               {Intl.NumberFormat().format(overviewData?.totalExpenses)}
             </p>
@@ -84,7 +87,7 @@ const DashboardOverview: React.FC<DashboardOverviewProps> = ({
           <FaPiggyBank className="text-green-600 w-8 h-8 mr-4" />
           <div>
             <h3 className="text-lg font-medium text-gray-700">Net Savings</h3>
-            <p className="text-xl font-bold text-gray-900">
+            <p id="net-savings" className="text-xl font-bold text-gray-900">
               {data?.currency}{" "}
               {Intl.NumberFormat().format(overviewData?.totalSavings)}
             </p>

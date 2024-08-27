@@ -227,8 +227,6 @@ export const calculateBudget = (
     }));
   }
 
-  console.log("categories", categories);
-
   return categories;
 };
 

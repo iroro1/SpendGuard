@@ -20,6 +20,7 @@ const DashComp: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [budget, setBudget] = useState<any>([]);
+  const [dt, setDt] = useState<any>({});
   const router = useRouter();
 
   const handleGenerateNewBudget = () => {
@@ -33,6 +34,10 @@ const DashComp: React.FC = () => {
   const handleGenerateBudget = (income: number, focus: string) => {
     const budget = calculateBudget(income, focus);
     setBudget(budget);
+    setDt({
+      focus: focus,
+      income: income,
+    });
   };
 
   const todaysDateInFormat = () => {
@@ -84,8 +89,8 @@ const DashComp: React.FC = () => {
             date={todaysDateInFormat()}
             budget={budget}
             appData={{
-              focus: params.get("focus"),
-              income: params.get("income"),
+              focus: dt?.focus || params.get("focus"),
+              income: dt?.income || params.get("income"),
               currency: params.get("currency"),
               country: params.get("country"),
             }}
@@ -96,8 +101,8 @@ const DashComp: React.FC = () => {
           <BudgetBreakdown
             budget={budget}
             appData={{
-              focus: params.get("focus"),
-              income: params.get("income"),
+              focus: dt?.focus || params.get("focus"),
+              income: dt?.income || params.get("income"),
               currency: params.get("currency"),
               country: params.get("country"),
             }}
