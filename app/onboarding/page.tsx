@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import OnboardingComponent from "@/components/OnboardingComponent";
 import { Metadata } from "next";
 
@@ -31,9 +32,12 @@ export const metadata: Metadata = {
 };
 const Onboarding = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-500 text-white px-4 py-16">
-      <OnboardingComponent />
-    </section>
+    <>
+      <Header color={"fff"} />
+      <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-500 text-white px-4 py-16">
+        <OnboardingComponent />
+      </section>
+    </>
   );
 };
 

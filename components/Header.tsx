@@ -1,7 +1,13 @@
 import React from "react";
 import Logo from "./Logo";
 
-const Header: React.FC<any> = ({ scroll }: { scroll: boolean }) => {
+const Header: React.FC<any> = ({
+  scroll,
+  color,
+}: {
+  scroll: boolean;
+  color: string;
+}) => {
   return (
     <header
       style={{
@@ -13,7 +19,7 @@ const Header: React.FC<any> = ({ scroll }: { scroll: boolean }) => {
     >
       <div className="container mx-auto flex justify-between items-center py-3 px-4">
         <h1 className="text-3xl font-bold tracking-wide ">
-          <Logo />
+          <Logo color={color} />
         </h1>
       </div>
     </header>

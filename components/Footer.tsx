@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import Logo from "./Logo";
 
-const Footer: React.FC = () => {
+const Footer: React.FC<any> = ({ color }: { color: string }) => {
   return (
     <footer className="bg-[#101928] text-white py-12 px-8">
       <div className="max-w-6xl mx-auto px-4">
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 
           {/* Social Media Icons */}
           <div>
-            <Logo color="F7F9FC" />
+            <Logo color={color || "F7F9FC"} />
             {/* <h3 className="text-xl font-semibold mb-4">Follow Us</h3> */}
             <div title="social-icons" className="flex space-x-4 mt-[32px]">
               <Link
