@@ -4,13 +4,26 @@ import FeatureSection from "@/components/FeatureSection";
 import StepsSection from "@/components/StepsSection";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 
 const HomePage = () => {
+  const [scroll, setScroll] = React.useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 200 ? setScroll(true) : setScroll(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="bg-gradient-radial pt-[80px] from-[#c3f0fb] to-[#c3f0fb]/40 min-h-screen text-white">
-      <Header />
+      <Header scroll={scroll} />
       <main className="min-h-full">
         <HeroSection />
         <FeatureSection />
