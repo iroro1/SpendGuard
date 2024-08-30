@@ -39,23 +39,23 @@ const HeroSection: React.FC = () => {
 
       <div
         id="hero-boxes"
-        className="relative w-[90%] pb-[90px] mx-auto mt-[80px] max-w-[1280px] h-[399px]"
+        className="relative w-[90%]  mx-auto mt-[80px] max-w-[1280px] min-h-[159px] md:h-[399px]"
       >
-        <Image
+        {/* <Image
           src={"/heroFull.png"}
           sizes="100vw"
           alt="hero image"
           width={0}
           height={0}
           className="min-w-[140%] md:block left-[-20%] block min-h-[174px] md:w-full md:h-full absolute"
-        />
+        /> */}
         <Image
-          src={"/heroCenter.png"}
+          src={"/hero.png"}
           sizes="100vw"
           alt="hero image"
           width={0}
           height={0}
-          className="h-[150px] w-[150px] md:min-w-[268px] md:min-h-[285px] mx-auto md:absolute md:top-1/2 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2"
+          className="min-h-[150px]  min-w-full absolute"
         />
         {/* <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md  flex-1">
           <h3 className="text-2xl font-semibold mb-4">Smart Budgeting</h3>
