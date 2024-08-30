@@ -22,7 +22,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-radial pt-[80px] from-[#c3f0fb] to-[#c3f0fb]/40 min-h-screen text-white">
+    <div className="bg-gradient-radial pt-[80px] from-[#E3EFFC] to-[#E3EFFC]/40 min-h-screen text-white">
       <Header scroll={scroll} />
       <main className="min-h-full">
         <HeroSection />

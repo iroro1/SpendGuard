@@ -68,7 +68,7 @@ const FeatureSection: React.FC = () => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`w-[341px] flex flex-col items-start text-center p-8 rounded-[12px] shadow-lg transition-transform transform hover:scale-105 border bg-[##F1F7FE] border-[##E4E7EC]`}
+            className={`w-full md:w-[341px] flex flex-col items-start text-center p-8 rounded-[12px] shadow-sm transition-transform transform hover:scale-105 border bg-[#F1F7FE] border-[#E4E7EC]`}
           >
             <div className="flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-white shadow-inner">
               {feature.icon}
@@ -81,6 +81,31 @@ const FeatureSection: React.FC = () => {
             </p>
           </div>
         ))}
+      </div>
+      <div className="mt-[100px] py-[80px] max-w-7xl mx-auto flex flex-col items-center md:flex-row md:justify-center">
+        <div className="max-w-[484px]">
+          <h4 className="text-[#667185] text-[16px] font-[600]">
+            FOR YOUR FUTURE
+          </h4>
+          <h2 className="mt-[12px] text-[#101928] text-[36px] leading-9 md:leading-[62px] font-[700] md:text-[48px]">
+            Better financial management
+          </h2>
+          <p className="mt-[16px] text-[#101928] text-[18px]">
+            Manage effectively your finances with spend guard budgeting while
+            exploring other features to give you inform decisions on your
+            finances
+          </p>
+        </div>
+        <div className="w-[478px] h-[419px] overflow-hidden bg-[#f0edfc] flex items-center justify-center mt-[50px]">
+          <Image
+            src={"/feature4.png"}
+            alt={"hero-image"}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="min-h-[419px] min-w-full  md:mt-0 object-cover object-center"
+          />
+        </div>
       </div>
     </section>
   );

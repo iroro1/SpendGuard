@@ -5,22 +5,25 @@ const CallToAction: React.FC = () => {
   return (
     <section
       title="cta"
-      className="relative bg-black py-16 px-4 text-center text-white"
+      className="relative min-h-[350px]  py-16 px-4 text-center text-[#F9FAFB]"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-indigo-900 opacity-60"></div>
+      <div className="absolute inset-0 bg-[#101928]"></div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-extrabold mb-4 leading-tight">
+      <div className="relative z-10 max-w-[1080px] mx-auto">
+        <h2 className="text-[28px] md:text-[56px] font-[700] w-[343px] mx-auto  mb-4 leading-[35px]">
           Ready to Transform Your Finances?
         </h2>
-        <p className="mb-8 text-lg font-medium">
+        {/* <p className="mb-8 text-lg font-medium">
           Join thousands of users who are taking control of their financial
           future.
-        </p>
+        </p> */}
         <Link href={"/onboarding"}>
-          <button className="bg-yellow-500 text-black px-8 py-4 rounded-full shadow-lg transform transition-transform hover:bg-yellow-400 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50">
+          <button
+            title="get-started"
+            className="bg-[#1671D9] text-[#fff] rounded-[8px] mx-auto text-[16px] mt-[32px] font-[600] w-[241px] h-[46px] flex justify-center items-center  hover:bg-[#1671D9]/80 hover:scale-105 transition duration-300 transform"
+          >
             Get Started
           </button>
         </Link>

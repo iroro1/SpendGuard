@@ -7,13 +7,13 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 px-4 text-[#101928]  pt-[40px] w-[90%] mx-auto">
         <h1
           title="main-heading"
-          className="text-3xl md:text-[60px] md:text-6xl font-[700]  mb-6 max-w-[909px] mx-auto"
+          className="text-[34px] md:text-[60px] md:text-6xl font-[700]  mb-6 max-w-[909px] mx-auto"
         >
           A smarter way to budgeting, saving, and investing.
         </h1>
         <p
           role="sub-heading"
-          className="text-xl md:text-[24px] text-[#344054] mb-8 font-[400]"
+          className="text-[18px] md:text-[24px] text-[#344054] mb-8 font-[400]"
         >
           Simplify budgeting, saving, and investing to help you reach your
           financial goals.
@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
 
       <div
         id="hero-boxes"
-        className="relative w-[90%] mx-auto mt-[80px] max-w-[1280px]"
+        className="relative w-[90%] pb-[90px] mx-auto mt-[80px] max-w-[1280px] h-[399px]"
       >
         <Image
           src={"/heroFull.png"}
@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
           alt="hero image"
           width={0}
           height={0}
-          className="w-full hidden md:block"
+          className="min-w-[140%] md:block left-[-20%] block min-h-[174px] md:w-full md:h-full absolute"
         />
         <Image
           src={"/heroCenter.png"}
@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
           alt="hero image"
           width={0}
           height={0}
-          className="h-[200px] w-[200px] md:min-w-[268px] md:min-h-[285px] mx-auto md:absolute md:top-1/2 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2"
+          className="h-[150px] w-[150px] md:min-w-[268px] md:min-h-[285px] mx-auto md:absolute md:top-1/2 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2"
         />
         {/* <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md  flex-1">
           <h3 className="text-2xl font-semibold mb-4">Smart Budgeting</h3>
