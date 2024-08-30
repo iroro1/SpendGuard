@@ -33,7 +33,7 @@ const PrivacyPolicy: NextPage = () => {
         <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
         <p className="mb-4">
           Welcome to SpendGuard! These terms and conditions outline the rules
-          and regulations for the use of SpendGuard's website and services.
+          and regulations for the use of SpendGuard&apos;s website and services.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
@@ -47,10 +47,10 @@ const PrivacyPolicy: NextPage = () => {
         <p className="mb-4">
           You agree to use our services only for lawful purposes and in a way
           that does not infringe the rights of, restrict, or inhibit anyone
-          else's use and enjoyment of the services. Prohibited behavior includes
-          harassing or causing distress or inconvenience to any other user,
-          transmitting obscene or offensive content, or disrupting the normal
-          flow of dialogue within our services.
+          else&apos;s use and enjoyment of the services. Prohibited behavior
+          includes harassing or causing distress or inconvenience to any other
+          user, transmitting obscene or offensive content, or disrupting the
+          normal flow of dialogue within our services.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4">
@@ -115,9 +115,9 @@ const PrivacyPolicy: NextPage = () => {
         <p className="mb-4">
           We reserve the right, at our sole discretion, to modify or replace
           these terms at any time. If a revision is material, we will try to
-          provide at least 30 days' notice prior to any new terms taking effect.
-          What constitutes a material change will be determined at our sole
-          discretion.
+          provide at least 30 days&apos; notice prior to any new terms taking
+          effect. What constitutes a material change will be determined at our
+          sole discretion.
         </p>
 
         <h2 className="text-2xl font-semibold mb-4">9. Contact Us</h2>
