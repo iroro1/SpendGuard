@@ -1,23 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative pb-[40px] bg-cover bg-center bg-hero-image min-h-screen flex flex-col items-center justify-center text-center">
-      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-      <div className="relative z-10 px-4 max-w-3xl pt-[40px] w-[90%] mx-auto">
+    <section className="relative  bg-cover bg-center bg-hero-image max-h-[903px] flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 px-4 text-[#101928]  pt-[40px] w-[90%] mx-auto">
         <h1
           title="main-heading"
-          className="text-5xl md:text-6xl font-bold text-white mb-6"
+          className="text-3xl md:text-[60px] md:text-6xl font-[700]  mb-6 max-w-[909px] mx-auto"
         >
-          Welcome to Spend Guard
+          A smarter way to budgeting, saving, and investing.
         </h1>
         <p
           role="sub-heading"
-          className="text-xl md:text-2xl text-gray-200 mb-8"
+          className="text-xl md:text-[24px] text-[#344054] mb-8 font-[400]"
         >
-          Your ultimate tool for smarter budgeting, saving, and investing.
+          Simplify budgeting, saving, and investing to help you reach your
+          financial goals.
         </p>
-        <p
+        {/* <p
           role="description"
           className="text-lg md:text-xl text-gray-300 mb-10"
         >
@@ -25,11 +26,11 @@ const HeroSection: React.FC = () => {
           manage your expenses better, Spend Guard has you covered. Customize
           your financial plan to match your goals and take control of your
           future.
-        </p>
+        </p> */}
         <Link href={"/onboarding"}>
           <button
             title="get-started"
-            className="bg-yellow-500 text-black px-8 py-4 rounded-full shadow-lg hover:bg-yellow-400 hover:scale-105 transition duration-300 transform"
+            className="bg-[#1671D9] text-[#fff] rounded-[8px] mx-auto text-[16px] font-[600] w-[241px] h-[56px] flex justify-center items-center  hover:bg-[#1671D9]/80 hover:scale-105 transition duration-300 transform"
           >
             Get Started
           </button>
@@ -38,29 +39,45 @@ const HeroSection: React.FC = () => {
 
       <div
         id="hero-boxes"
-        className="relative z-10 w-[90%]  flex flex-col md:flex-row mt-16 space-y-8 md:space-y-0 md:space-x-8 max-w-4xl mx-auto"
+        className="relative w-[90%] mx-auto mt-[80px] max-w-[1280px]"
       >
-        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md text-white flex-1">
+        <Image
+          src={"/heroFull.png"}
+          sizes="100vw"
+          alt="hero image"
+          width={0}
+          height={0}
+          className="w-full hidden md:block"
+        />
+        <Image
+          src={"/heroCenter.png"}
+          sizes="100vw"
+          alt="hero image"
+          width={0}
+          height={0}
+          className="h-[200px] w-[200px] md:min-w-[268px] md:min-h-[285px] mx-auto md:absolute md:top-1/2 md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2"
+        />
+        {/* <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md  flex-1">
           <h3 className="text-2xl font-semibold mb-4">Smart Budgeting</h3>
           <p>
             Leverage AI-driven insights to create a budget that aligns with your
             lifestyle and financial goals.
           </p>
         </div>
-        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md text-white flex-1">
+        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md  flex-1">
           <h3 className="text-2xl font-semibold mb-4">Customizable Plans</h3>
           <p>
             Choose from savings-heavy, investment-heavy, or balanced plans to
             tailor your financial strategy.
           </p>
         </div>
-        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md text-white flex-1">
+        <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md  flex-1">
           <h3 className="text-2xl font-semibold mb-4">Real-Time Insights</h3>
           <p>
             Track your spending, savings, and investments with up-to-the-minute
             data and analytics.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

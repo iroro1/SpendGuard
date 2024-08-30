@@ -23,7 +23,7 @@ export const calculateBudget = (
             { name: "Emergency Fund", amount: income * 0.1 },
             { name: "Retirement Fund", amount: income * 0.1 },
             { name: "Short-Term Savings", amount: income * 0.1 },
-            { name: "Investments", amount: income * 0.05 }, // Added investment
+            { name: "Investments", amount: income * 0.05 },
           ],
         },
         {
@@ -82,7 +82,7 @@ export const calculateBudget = (
             { name: "Stocks", amount: income * 0.2 },
             { name: "Bonds", amount: income * 0.1 },
             { name: "Real Estate", amount: income * 0.1 },
-            { name: "Savings", amount: income * 0.05 }, // Added savings
+            { name: "Savings", amount: income * 0.05 },
           ],
         },
         {
@@ -203,7 +203,6 @@ export const calculateBudget = (
       throw new Error("Invalid focus type");
   }
 
-  // Calculate the total allocated amount and adjust if necessary
   const totalAllocated = categories.reduce(
     (sum, category) =>
       sum +
@@ -213,8 +212,6 @@ export const calculateBudget = (
       ),
     0
   );
-
-  console.log("totalAllocated", totalAllocated);
 
   if (totalAllocated > income) {
     const adjustmentFactor = income / totalAllocated;

@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const HomePage = () => {
   return (
-    <div className="bg-gradient-to-r pt-[80px] from-purple-600 to-pink-600 min-h-screen text-white">
+    <div className="bg-gradient-radial pt-[80px] from-[#c3f0fb] to-[#c3f0fb]/40 min-h-screen text-white">
       <Header />
       <main className="min-h-full">
         <HeroSection />
