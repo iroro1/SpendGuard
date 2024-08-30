@@ -23,7 +23,14 @@ export const calculateBudget = (
             { name: "Emergency Fund", amount: income * 0.1 },
             { name: "Retirement Fund", amount: income * 0.1 },
             { name: "Short-Term Savings", amount: income * 0.1 },
-            { name: "Investments", amount: income * 0.05 },
+          ],
+        },
+        {
+          name: "Investments",
+          subcategories: [
+            { name: "Stocks", amount: income * 0.1 },
+            { name: "Bonds", amount: income * 0.05 },
+            { name: "Real Estate", amount: income * 0.05 },
           ],
         },
         {
@@ -37,7 +44,7 @@ export const calculateBudget = (
         {
           name: "Groceries",
           subcategories: [
-            { name: "Food", amount: income * 0.1 },
+            { name: "Food", amount: income * 0.2 },
             { name: "Household Supplies", amount: income * 0.03 },
           ],
         },
@@ -82,7 +89,14 @@ export const calculateBudget = (
             { name: "Stocks", amount: income * 0.2 },
             { name: "Bonds", amount: income * 0.1 },
             { name: "Real Estate", amount: income * 0.1 },
-            { name: "Savings", amount: income * 0.05 },
+          ],
+        },
+        {
+          name: "Savings",
+          subcategories: [
+            { name: "Emergency Fund", amount: income * 0.05 },
+            { name: "Retirement Fund", amount: income * 0.05 },
+            { name: "Short-Term Savings", amount: income * 0.05 },
           ],
         },
         {
@@ -96,7 +110,7 @@ export const calculateBudget = (
         {
           name: "Groceries",
           subcategories: [
-            { name: "Food", amount: income * 0.1 },
+            { name: "Food", amount: income * 0.15 },
             { name: "Household Supplies", amount: income * 0.03 },
           ],
         },
@@ -140,13 +154,13 @@ export const calculateBudget = (
           subcategories: [
             { name: "Emergency Fund", amount: income * 0.08 },
             { name: "Retirement Fund", amount: income * 0.08 },
-            { name: "Short-Term Savings", amount: income * 0.09 },
+            { name: "Short-Term Savings", amount: income * 0.08 },
           ],
         },
         {
           name: "Investments",
           subcategories: [
-            { name: "Stocks", amount: income * 0.15 },
+            { name: "Stocks", amount: income * 0.1 },
             { name: "Bonds", amount: income * 0.08 },
             { name: "Real Estate", amount: income * 0.1 },
           ],
@@ -162,7 +176,7 @@ export const calculateBudget = (
         {
           name: "Groceries",
           subcategories: [
-            { name: "Food", amount: income * 0.1 },
+            { name: "Food", amount: income * 0.15 },
             { name: "Household Supplies", amount: income * 0.03 },
           ],
         },

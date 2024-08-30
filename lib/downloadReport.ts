@@ -25,5 +25,5 @@ export const downloadReport = async (date: string) => {
   pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
 
   // Save the PDF
-  pdf.save(date + "-report.pdf");
+  pdf.save(date + "SpendGuard-budget-report.pdf");
 };
