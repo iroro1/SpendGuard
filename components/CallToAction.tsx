@@ -12,7 +12,7 @@ const CallToAction: React.FC = () => {
 
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-[1080px] mx-auto">
-        <h2 className="text-[28px] md:text-[56px] font-[700] w-[343px] mx-auto  mb-4 leading-[35px]">
+        <h2 className="text-[28px] md:text-[56px] font-[700] w-[343px] md:w-full mx-auto  mb-4 leading-[35px]">
           Ready to Transform Your Finances?
         </h2>
         {/* <p className="mb-8 text-lg font-medium">
