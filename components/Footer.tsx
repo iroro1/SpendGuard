@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-4 md:flex md:justify-between md:items-center mt-[32px] border-t border-gray-800 pt-[32px]">
+        <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center mt-[32px] border-t border-gray-800 pt-[32px]">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Spend Guard. All rights reserved.
           </p>
